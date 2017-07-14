@@ -8,5 +8,5 @@ and suggestions and bug reports are welcome and encouraged.
 
 ### To-Do:
 - [ ] Better error-checking and reporting.
-- [ ] Prettify documentation.
+- [ ] Prettify [documentation](https://mundayne.github.io/reaction-menu/index.html).
 - [ ] Finish this list.
