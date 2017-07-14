@@ -1,0 +1,11 @@
+{
+  "name": "reaction-menu",
+  "version": "1.0.0",
+  "description": "Add snazzy menus to your bot's messages using Discord's reaction system.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }, "directories": {"docs": "docs"}, "repository": {"type": "git", "url": "https://github.com/Mundayne/reaction-menu"},
+  "bugs": {"url": "https://github.com/Mundayne/reaction-menu/issues"}, "keywords": [],
+  "author": "Mundane",
+  "license": "MIT"
+}
