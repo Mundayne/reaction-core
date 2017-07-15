@@ -53,14 +53,14 @@ class MenuMessage {
    */
   AddMenu(buttons = null, data = undefined) {
     //If this doesn't already have a Menu:
-    if (!this.menu) {
+    if (!this.Menu) {
       //Create a new Menu.
-      this.menu = new Menu(this.Client);
+      this.Menu = new Menu(this.Client);
       //If there have been Buttons passed:
       if (buttons) {
         //Loop through each Button, adding it to the Menu.
         buttons.forEach(button => {
-          this.menu.AddButton(button.emoji, button.Callback, data);
+          this.Menu.AddButton(button.Emoji, button.Callback, data);
         });
       }
     }
@@ -78,7 +78,7 @@ class MenuMessage {
         //Send the embed to the message's channel, then:
         this.Channel.send({embed:this.Content}).then(m => {
           //If this MenuMessage has a menu, display it and resolve this promise.
-          if (this.menu) this.menu.Display(m);
+          if (this.Menu) this.Menu.Display(m);
           resolve(m);
         }).catch(console.error);
       }
@@ -86,7 +86,7 @@ class MenuMessage {
       else this.Channel.send(this.Content)
         .then(m => {
           //If this MenuMessage has a menu, display it and resolve this promise.
-          if (this.menu) this.menu.Display(m);
+          if (this.Menu) this.Menu.Display(m);
           resolve(m);
         }).catch(console.error);
     });

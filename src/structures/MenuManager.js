@@ -54,11 +54,11 @@ class MenuManager {
     //If the message has a Menu:
     if (menu) {
       //Get the Button that belongs to the Menu.
-      var btn = menu.buttons.get(emoji);
+      var btn = menu.Buttons.get(emoji);
       //If the Menu has the Button:
       if (btn) {
         //Execute the callback for the Button.
-        btn.Callback(user, this.Client, msg, btn.args);
+        btn.Callback(user, this.Client, msg, btn.Data);
       }
     }
 
