@@ -1,6 +1,6 @@
 {
   "name": "reaction-menu",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Add snazzy menus to your bot's messages using Discord's reaction system.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
