@@ -4,7 +4,7 @@
  */
 
 module.exports = {
-  Client: requrie('./structures/Client'),
+  Client: require('./structures/Client'),
   Manager: require('./structures/MenuManager'),
   Message: require('./structures/MenuMessage'),
   Button: require('./structures/ButtonBuilder')
