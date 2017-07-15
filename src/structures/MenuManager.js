@@ -31,7 +31,7 @@ class MenuManager {
    */
   Register(menu) {
     //Add the Menu to the Manager's collection.
-    this.Menus.set(menu.message.id, menu);
+    this.Menus.set(menu.Message.id, menu);
   }
 
   /**
