@@ -8,20 +8,12 @@ class MenuMessage {
   /**
    * Creates a new MenuMessage.
    *
-   * @param  {Client} client The client this belongs to.
    * @param  {(string|RichEmbed)} content The content of the message.
    * @param  {Channel} channel The channel to send the message to, or the channel the message is in.
    * @param  {boolean} [embed=false] Whether or not content is a RichEmbed.
    */
 
-  constructor (client, content, channel, embed = false) {
-    /**
-     * The Client the MenuMessage belongs to.
-     * @name MenuMessage#Client
-     * @type {Client}
-     * @readonly
-     */
-    Object.defineProperty(this, 'Client', {value: client})
+  constructor (content, channel, embed = false) {
     /**
      * The Channel the MenuMessage exists in.
      * @name MenuMessage#Channel
@@ -55,7 +47,7 @@ class MenuMessage {
     // If this doesn't already have a Menu:
     if (!this.Menu) {
       // Create a new Menu.
-      this.Menu = new Menu(this.Client)
+      this.Menu = new Menu()
       // If there have been Buttons passed:
       if (buttons) {
         // Loop through each Button, adding it to the Menu.

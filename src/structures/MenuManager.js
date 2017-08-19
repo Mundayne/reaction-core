@@ -6,18 +6,9 @@ const Discord = require('discord.js')
 class MenuManager {
   /**
    * Creates a new Menumanager.
-   *
-   * @param  {Client} client The client who owns the MenuMassage.
    */
 
-  constructor (client) {
-    /**
-     * The Client the Manager belongs to.
-     * @name MenuManager#Client
-     * @type {Client}
-     * @readonly
-     */
-    Object.defineProperty(this, 'Client', {value: client})
+  constructor () {
     /**
      * A Collection of [Menus]{@link Menu} belonging to this Manager.
      */
@@ -58,7 +49,7 @@ class MenuManager {
       // If the Menu has the Button:
       if (btn) {
         // Execute the callback for the Button.
-        btn.Callback(user, this.Client, msg, btn.Data)
+        btn.Callback(user, msg, btn.Data)
       }
     }
 

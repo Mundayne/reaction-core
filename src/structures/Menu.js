@@ -9,18 +9,9 @@ const Builder = require('./ButtonBuilder')
 class Menu {
   /**
    * Creates a Menu.
-   *
-   * @param  {Client} client The Client the Mesnu belongs to.
    */
 
   constructor (client) {
-    /**
-     * The Client the Menu belongs to.
-     * @name MenuManager#Client
-     * @type {Client}
-     * @readonly
-     */
-    Object.defineProperty(this, 'Client', {value: client})
     /**
      * A Collection of [Buttons]{@link Button} belonging to this Menu.
      */
@@ -34,7 +25,6 @@ class Menu {
   /**
    * @callback ButtonCallback
    * @param {User} user The User who clicked the Button.
-   * @param {Client} client The Client the Button belongs to.
    * @param {Message} message The Message this Menu belongs to.
    * @param {Object} [data=undefined] Optional data to pass to the callback.
    */
@@ -65,7 +55,7 @@ class Menu {
     // Set Message so this Menu knows what it belongs to.
     this.Message = m
     // Register this Menu, as it is now complete and active.
-    this.Client.MenuManager.Register(this)
+    m.client.MenuManager.Register(this)
 
     draw(this.Buttons, m)
   }
