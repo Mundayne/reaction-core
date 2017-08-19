@@ -11,7 +11,7 @@ class Menu {
    * Creates a Menu.
    */
 
-  constructor (client) {
+  constructor () {
     /**
      * A Collection of [Buttons]{@link Button} belonging to this Menu.
      */
