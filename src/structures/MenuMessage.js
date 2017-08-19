@@ -52,7 +52,7 @@ class MenuMessage {
       if (buttons) {
         // Loop through each Button, adding it to the Menu.
         buttons.forEach(button => {
-          this.Menu.AddButton(button.Emoji, button.Callback, button.Data)
+          this.Menu.AddButton(button.Emoji, button.Callback, data || button.Data)
         })
       }
     }
