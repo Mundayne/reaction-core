@@ -1,5 +1,5 @@
 # don't track util batch files
 *.bat
 # example, for testing
-example.js
+test.js
 node_modules/
