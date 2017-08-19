@@ -1,11 +1,11 @@
-const RM = require('./src/index')
+const RC = require('./src/index')
 const bot = new RM.Client()
 
 bot.on('message', msg => {
   if (msg.content === '!!!test') {
-    let Msg = new RM.Message(bot, 'test', msg.channel)
+    let Msg = new RC.Message(bot, 'test', msg.channel)
     Msg.AddMenu()
-    let btn = new RM.Button()
+    let btn = new RC.Button()
     nums.forEach(num => {
       btn.SetEmoji(num.e)
       btn.SetCallback(Btn)
