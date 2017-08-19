@@ -7,25 +7,25 @@ class MenuButton {
    *
    * @param  {string} emoji The emoji which graphically represents the Button.
    * @param  {ButtonCallback} Callback The callback function of the Button.
-   * @param  {Object} [data=undefined] Additional data for the Callback.
+   * @param  {Object} [data=null] Additional data for the Callback.
    */
 
-  constructor(emoji, Callback, data = undefined) {
+  constructor (emoji, Callback, data = undefined) {
     /**
      * The emoji this Button is represented graphically by.
      * @name MenuButton#Emoji
      * @type {string}
      * @readonly
      */
-    Object.defineProperty(this, 'Emoji', {value:emoji});
+    Object.defineProperty(this, 'Emoji', {value: emoji})
     /**
      * This Button's callback function.
      */
-    this.Callback = Callback;
+    this.Callback = Callback
     /**
      * Optional data to be passed to this Button's callback.
      */
-    this.Data = data;
+    this.Data = data
   }
 
   /**
@@ -33,9 +33,13 @@ class MenuButton {
    *
    * @param  {Message} m The Message to Draw to.
    */
-  Draw(m) {
-    //React.
-    m.react(this.Emoji);
+  Draw (m) {
+    // React.
+    let r = new Promise((resolve, reject) => {
+      m.react(this.Emoji).then(() => resolve(true))
+      .catch(console.error)
+    })
+    return r
   }
 }
-module.exports = MenuButton;
+module.exports = MenuButton

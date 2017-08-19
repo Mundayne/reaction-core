@@ -3,27 +3,26 @@
  */
 class ButtonBuilder {
   /**
-   * constructor - description  
+   * Creates a ButtonBuilder
    *
-   * @param  {type} emoji = null    description
-   * @param  {type} callback = null description
-   * @param  {type} data = null     description
-   * @return {type}                 description
+   * @param  {string} emoji The visual representation of the button.
+   * @param  {ButtonCallback} callback Callback function to execute when the button is pressed.
+   * @param  {Object} [data=null] Optional data to pass.
    */
 
-  constructor(emoji = null, callback = null, data = null) {
+  constructor (emoji = null, callback = null, data = null) {
     /**
      * The emoji that is the visual representation of this Button.
      */
-    this.Emoji = emoji;
+    this.Emoji = emoji
     /**
      * The callback executed when this button is pressed.
      */
-    this.Callback = callback;
+    this.Callback = callback
     /**
      * Optional additional data to pass to this Button's callback.
      */
-    this.Data = data;
+    this.Data = data
   }
 
   /**
@@ -31,10 +30,10 @@ class ButtonBuilder {
    *
    * @param  {string} emoji The emoji that is the visual representation of this Button.
    */
-  SetEmoji(emoji) {
-    //If the user has passed a raw Discord emoji, turn it into a string.
-    if (typeof emoji != "string") emoji = emoji.toString();
-    this.Emoji = emoji;
+  SetEmoji (emoji) {
+    // If the user has passed a raw Discord emoji, turn it into a string.
+    if (typeof emoji !== 'string') emoji = emoji.toString()
+    this.Emoji = emoji
   }
 
   /**
@@ -42,8 +41,8 @@ class ButtonBuilder {
    *
    * @param  {ButtonCallback} callback The callback executed when this button is pressed.
    */
-  SetCallback(callback) {
-    this.Callback = callback;
+  SetCallback (callback) {
+    this.Callback = callback
   }
 
   /**
@@ -51,7 +50,8 @@ class ButtonBuilder {
    *
    * @param  {Object} data Optional additional data to pass to this Button's callback.
    */
-  SetData(data) {
-    this.Data = data;
+  SetData (data) {
+    this.Data = data
   }
 }
+module.exports = ButtonBuilder
