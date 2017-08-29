@@ -1,4 +1,4 @@
-const Menu = require('./menu')
+const Menu = require('./Menu')
 const Discord = require('discord.js')
 
 /**
