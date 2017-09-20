@@ -51,10 +51,10 @@ class MenuManager {
         // Execute the callback for the Button.
         btn.Callback(user, msg, btn.Data)
       }
-    }
 
-    // Remove the reaction.
-    rxn.remove(user).catch(console.error)
+      // Remove the reaction.
+      rxn.remove(user).catch(console.error)
+    }
   }
 }
 module.exports = MenuManager
