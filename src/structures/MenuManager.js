@@ -39,6 +39,8 @@ class MenuManager {
     var msg = rxn.message
     // Store the emoji being reacted.
     var emoji = rxn.emoji.toString()
+    // Test for a custom emoji, and handle that too
+    if (emoji[0] === '<') emoji = /<:.+:(\d+)/.exec(emoji)[1]
 
     // Get the Menu that belongs to the message.
     var menu = this.Menus.get(msg.id)
