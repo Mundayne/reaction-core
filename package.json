@@ -1,25 +1,34 @@
 {
   "name": "reaction-core",
-  "main": "./src/index",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Add snazzy menus to your bot's messages using Discord's reaction system.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "level": "^3.0.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "directories": {
-    "docs": "docs"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mundayne/reaction-menu"
+    "url": "git+https://github.com/Mundayne/reaction-core.git"
   },
-  "bugs": {
-    "url": "https://github.com/Mundayne/reaction-menu/issues"
-  },
-  "keywords": [],
+  "keywords": [
+    "discord",
+    "reactions",
+    "reaction-core",
+    "reaction-menu",
+    "discord",
+    "bots",
+    "bots",
+    "javascript"
+  ],
   "author": "Mundane",
   "license": "MIT",
-  "dependencies": {
-    "discord.js": "^11.1.0"
-  }
+  "bugs": {
+    "url": "https://github.com/Mundayne/reaction-core/issues"
+  },
+  "homepage": "https://github.com/Mundayne/reaction-core#readme"
 }
