@@ -11,7 +11,6 @@ Discord.TextChannel.prototype.sendMenu = async function (menu) {
         sendMessage = { embed: menu.text }
       }
       this.send(sendMessage).then(async message => {
-        console.log('ext msg : ' + message.channel.id)
         for (let button in menu.buttons) {
           await message.react(button).catch(console.error)
         }
