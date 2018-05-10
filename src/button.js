@@ -18,7 +18,7 @@ class Button {
       console.trace('Callback type should be function.')
       return false
     }
-    this.callback = callback
+    this.run = callback
     return callback
   }
 }
