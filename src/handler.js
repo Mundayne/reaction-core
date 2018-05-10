@@ -12,9 +12,8 @@ class Handler {
 
     // The message reacted to and the emoji reacted with
     let message = messageReaction.message
-    let emoji = messageReaction.emoji
-    // If it's a custom emoji, strip it down to just the ID
-    if (emoji[0] === '<') emoji = /<:.+:(\d+)/.exec(emoji)[1]
+    // Custom emoji have an id field; regular have null
+    let emoji = messageReaction.emoji.id || messageReaction.emoji
 
     // Find the menu, if any exists
     let menu = this.menus[message.id]
