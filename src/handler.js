@@ -20,6 +20,9 @@ class Handler {
     // If there's no menu, stop
     if (!menu) return
 
+    // An option for only the 'owner' of the menu to react
+    if (menu.options.owner && user.id !== menu.owner) return
+
     // Find and execute the button, if any
     let button = menu.buttons[emoji]
     if (!button) return

@@ -1,7 +1,8 @@
 class Menu {
-  constructor (text, ...buttons) {
+  constructor (text, buttons, options = { }) {
     this.text = text
     this.buttons = { }
+    this.options = options
     this.addButtons(...buttons)
   }
 

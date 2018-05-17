@@ -29,11 +29,13 @@ Note that in the following code, I use an array of object literals as my buttons
 
 First, let's create the menu, passing it the text to display and it's buttons.
 ```js
-let changeColour = new RC.Menu(example.embed, ...example.buttons)
+let changeColour = new RC.Menu(example.embed, example.buttons, example.options)
 ```
-I apply a spread operator (`...`) because of the way my code is handling buttons. You could specify buttons as any argument after the first to infinity, with one button per argument like below, but my buttons are in an array so I must spread them to achieve the same effect:
+The options object currently owner supports setting an 'owner', whereby the specified user is the only one who can interact with the menu, specified by ID. An example options object is
 ```js
-let changeColour = new RC.Menu(example.embed, example.buttonOne, example.buttonTwo, example.buttonThree)
+{
+  owner: '216399535390326794'
+}
 ```
 
 Next, register the menu to the handler.
