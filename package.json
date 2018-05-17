@@ -1,6 +1,6 @@
 {
   "name": "reaction-core",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Add snazzy menus to your bot's messages using Discord's reaction system.",
   "main": "index.js",
   "dependencies": {
