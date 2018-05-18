@@ -4,9 +4,6 @@ class Handler {
   }
 
   handle (messageReaction, user) {
-    // Remove the reaction
-    if (messageReaction.message.client.user !== user) messageReaction.remove(user).catch(console.error)
-
     // Bots aren't handled
     if (user.bot) return
 
@@ -19,6 +16,9 @@ class Handler {
     let menu = this.menus[message.id]
     // If there's no menu, stop
     if (!menu) return
+
+    // Remove the reaction
+    if (messageReaction.message.client.user !== user) messageReaction.remove(user).catch(console.error)
 
     // An option for only the 'owner' of the menu to react
     if (menu.options.owner && user.id !== menu.options.owner) return
