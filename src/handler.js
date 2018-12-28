@@ -1,6 +1,7 @@
 class Handler {
   constructor () {
     this.menus = { }
+    this.users = [ ]
   }
 
   handle (messageReaction, user) {
@@ -18,10 +19,19 @@ class Handler {
     if (!menu) return
 
     // Remove the reaction
-    if (messageReaction.message.client.user !== user) messageReaction.remove(user).catch(console.error)
+    if (!menu.options.keep && messageReaction.message.client.user !== user) messageReaction.remove(user).catch(console.error)
 
     // An option for only the 'owner' of the menu to react
     if (menu.options.owner && user.id !== menu.options.owner) return
+    // An option for 'slowmode'
+    if (menu.options.slowmode > 0) {
+      if (this.users.indexOf(user.id) > -1) return
+      else {
+        this.users.push(user.id)
+        let self = this
+        setTimeout(() => self.users.splice(self.users.indexOf(user.id), 1), menu.options.slowmode)
+      }
+    }
 
     // Find and execute the button, if any
     let button = menu.buttons[emoji]
