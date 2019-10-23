@@ -19,11 +19,11 @@ client.on('messageReactionAdd', (messageReaction, user) => handler.handle(messag
 // An example set of data; moved to extra file so that only the specific code for creating a menu is in here.
 const example = require('./exButtons')
 
-let changeColour = new RC.Menu(example.embed, ...example.buttons)
+let changeColour = new RC.Menu(example.embed, example.buttons)
 handler.addMenus(changeColour)
 
 client.on('message', async message => {
-  if (!message.author.bot) return
+  if (message.author.bot) return
   if (message.content === 'rc!test') {
     message.channel.sendMenu(changeColour)
   }

@@ -1,7 +1,7 @@
 class Menu {
   constructor (text, buttons, options) {
     this.text = text
-    this.buttons = { }
+    this.buttons = [ ]
     this.options = options || {
       owner: false,
       keep: false,
