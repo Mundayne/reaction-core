@@ -1,3 +1,5 @@
+const DMChannel = require('discord.js').DMChannel
+
 class Handler {
   constructor () {
     this.menus = { }
@@ -19,7 +21,9 @@ class Handler {
     if (!menu) return
 
     // Remove the reaction
-    if (!menu.options.keep && messageReaction.message.client.user !== user) messageReaction.users.remove(user).catch(console.error)
+    if (!menu.options.keep&& messageReaction.message.client.user !== user && !(message.channel instanceof DMChannel)) {
+      messageReaction.users.remove(user).catch(console.error)
+    }
 
     // An option for only the 'owner' of the menu to react
     if (menu.options.owner && user.id !== menu.options.owner) return

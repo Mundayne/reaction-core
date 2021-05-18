@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const Menu = require('../menu')
 
-Discord.TextChannel.prototype.sendMenu = async function (menu) {
+const menuSender = async function (menu) {
   return new Promise((resolve, reject) => {
     if (menu instanceof Menu) {
       let sendMessage = { }
@@ -20,3 +20,7 @@ Discord.TextChannel.prototype.sendMenu = async function (menu) {
     } else this.send(menu).then(message => resolve(message))
   })
 }
+
+Discord.TextChannel.prototype.sendMenu = menuSender
+Discord.DMChannel.prototype.sendMenu = menuSender
+
